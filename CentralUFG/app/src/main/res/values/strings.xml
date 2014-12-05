@@ -36,4 +36,6 @@
     <!--! Linhas de Ônibus !-->
     <string name="hint_numero_ponto">Insira o número do ponto...</string>
     <string name="botao_pesquisar">Pesquisar</string>
+    <string name="context_add_alarm">Adicionar alarme</string>
+    <string name="context_remove_alarm">Remover alarme</string>
 </resources>

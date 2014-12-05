@@ -102,7 +102,7 @@ public class MainActivity extends ActionBarActivity {
 
         mTitle = mDrawerTitle = getTitle();
 
-        gcmRegister = new GCMRegister(this);
+//        gcmRegister = new GCMRegister(this);
 
         menuItems = getResources().getStringArray(R.array.opcoes_menu);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -157,17 +157,17 @@ public class MainActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        if (gcmRegister.checkPlayServices()) {
-            gcm = GoogleCloudMessaging.getInstance(this);
-            idRegistroGCM = gcmRegister.getRegistrationId(context);
-
-            if (idRegistroGCM.isEmpty() || "".equals(idRegistroGCM)) {
-                gcmRegister.execute();
-            }
-
-        } else {
-            Log.i(TAG, "Não encontrado Google Play Services APK válido.");
-        }
+//        if (gcmRegister.checkPlayServices()) {
+//            gcm = GoogleCloudMessaging.getInstance(this);
+//            idRegistroGCM = gcmRegister.getRegistrationId(context);
+//
+//            if (idRegistroGCM.isEmpty() || "".equals(idRegistroGCM)) {
+//                gcmRegister.execute();
+//            }
+//
+//        } else {
+//            Log.i(TAG, "Não encontrado Google Play Services APK válido.");
+//        }
     }
 
 
