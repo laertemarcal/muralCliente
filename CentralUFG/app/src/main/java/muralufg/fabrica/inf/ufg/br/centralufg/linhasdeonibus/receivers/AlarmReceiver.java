@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
+import android.os.Vibrator;
 import android.widget.Toast;
 
 import muralufg.fabrica.inf.ufg.br.centralufg.model.LinhaDeOnibus;
@@ -18,5 +19,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         LinhaDeOnibus linhaDeOnibus = intent.getParcelableExtra("linha_de_onibus");
 
         Toast.makeText(context, "O ônibus " + linhaDeOnibus.getNumero() + " chegará em breve!", Toast.LENGTH_LONG).show();
+        Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(1000);
     }
 }

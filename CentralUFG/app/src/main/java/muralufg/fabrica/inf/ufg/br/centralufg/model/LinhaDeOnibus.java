@@ -82,7 +82,7 @@ public class LinhaDeOnibus implements Parcelable{
         for (int i = 0; i < 2; i++) {
             try {
                 JSONObject linha = new JSONObject();
-                linha.put("name", "T LAERTAO");
+                linha.put("name", "T FICTICIO");
                 linha.put("number", 1337);
                 linha.put("next", 15);
                 linhasDeOnibus.add(new LinhaDeOnibus(linha));

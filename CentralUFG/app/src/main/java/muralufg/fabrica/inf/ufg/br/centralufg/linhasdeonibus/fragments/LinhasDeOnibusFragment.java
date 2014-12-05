@@ -145,18 +145,17 @@ public class LinhasDeOnibusFragment extends Fragment implements ServiceCompliant
         alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int whichButton) {
-                Editable editTextTempoValue = editTextTempo.getText();
-                Log.d("", editTextTempoValue + "");
+                String editTextTempoValue = editTextTempo.getText().toString();
                 int tempoEmMinutos;
                 if (editTextTempoValue == null || ("").equals(editTextTempoValue)) {
                     tempoEmMinutos = 0;
                 } else {
-                    tempoEmMinutos = Integer.parseInt(editTextTempo.getText().toString());
+                    tempoEmMinutos = Integer.parseInt(editTextTempoValue);
                 }
                 if (tempoEmMinutos > linhaDeOnibus.getProximo()) {
                     handleError("O tempo em minutos deve ser menor ou igual ao horário de chegada do ônibus!");
                 } else {
-                    tempoEmMinutos = Integer.parseInt(editTextTempo.getText().toString());
+                    tempoEmMinutos = Integer.parseInt(editTextTempoValue);
                     setAlarm(linhaDeOnibus, tempoEmMinutos);
                     dialog.dismiss();
                 }
